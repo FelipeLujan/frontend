@@ -5,13 +5,9 @@ import gql from "graphql-tag";
 import DisplayError from "./ErrorMessage";
 import { CURRENT_USER_QUERY } from "./User";
 
-const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION(
-    $email: String!
-    $name: String!
-    $password: String!
-  ) {
-    signup(email: $email, name: $name, password: $password) {
+const SIGNIN_MUTATION = gql`
+  mutation SIGNIN_MUTATION($email: String!, $password: String!) {
+    signin(email: $email, password: $password) {
       id
       email
       name
@@ -19,15 +15,14 @@ const SIGNUP_MUTATION = gql`
   }
 `;
 
-function Signup() {
-  const [name, setName] = useState("");
+function Signin() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  console.log(name);
   return (
+    //CURRENT_USER_QUERY will be refetched once the mutation is finished
     <Mutation
-      mutation={SIGNUP_MUTATION}
-      variables={{ email, password, name }}
+      mutation={SIGNIN_MUTATION}
+      variables={{ email, password }}
       refetchQueries={[{ query: CURRENT_USER_QUERY }]}
     >
       {(signup, { error, loading }) => {
@@ -41,7 +36,7 @@ function Signup() {
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>
-              <h2>signup for an account</h2>
+              <h2>Sign into your account</h2>
               <DisplayError error={error}> </DisplayError>
               <label htmlFor="email">
                 email
@@ -51,16 +46,6 @@ function Signup() {
                   placeholder="email"
                   value={email}
                   onChange={event => setEmail(event.target.value)}
-                />
-              </label>
-              <label htmlFor="name">
-                name
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="name"
-                  value={name}
-                  onChange={event => setName(event.target.value)}
                 />
               </label>
               <label htmlFor="password">
@@ -82,6 +67,6 @@ function Signup() {
   );
 }
 
-Signup.propTypes = {};
+Signin.propTypes = {};
 
-export default Signup;
+export default Signin;
