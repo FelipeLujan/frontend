@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Form from "./styles/Form";
-import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
-import DisplayError from "./ErrorMessage";
-import { CURRENT_USER_QUERY } from "./User";
+import React, { useState } from 'react';
+import Form from './styles/Form';
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
+import DisplayError from './ErrorMessage';
+import { CURRENT_USER_QUERY } from './User';
 
 const SIGNIN_MUTATION = gql`
   mutation SIGNIN_MUTATION($email: String!, $password: String!) {
@@ -16,8 +16,8 @@ const SIGNIN_MUTATION = gql`
 `;
 
 function Signin() {
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   return (
     //CURRENT_USER_QUERY will be refetched once the mutation is finished
     <Mutation

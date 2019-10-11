@@ -1,6 +1,6 @@
-import React from "react";
-import PleaseSignIn from "../components/pleaseSignIn";
-import Permissions from "../components/Permissions";
+import React from 'react';
+import PleaseSignIn from '../components/pleaseSignIn';
+import Permissions from '../components/Permissions';
 
 const PermissionsPage = props => {
   return (

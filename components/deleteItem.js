@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
-import { ALL_ITEMS_QUERY } from "./Items";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
+import { ALL_ITEMS_QUERY } from './Items';
 
 const DELETE_ITEM_MUTATION = gql`
   mutation DELETE_ITEM_MUTATION($id: ID!) {
@@ -23,7 +23,7 @@ class DeleteItem extends Component {
     data.items = data.items.filter(
       item => item.id !== payload.data.deleteItem.id
     );
-    cache.writeQuery({ query: ALL_ITEMS_QUERY, data: data });
+    cache.writeQuery({ query: ALL_ITEMS_QUERY, data });
     console.log(cache, payload);
   };
   render() {

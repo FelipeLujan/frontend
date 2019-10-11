@@ -112,5 +112,9 @@
         ]
       }
     }
+  },
+  "prettier": {
+
+    "singleQuote": true
   }
 }

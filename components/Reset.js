@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Form from "./styles/Form";
-import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
-import DisplayError from "./ErrorMessage";
-import { CURRENT_USER_QUERY } from "./User";
+import React, { useState } from 'react';
+import Form from './styles/Form';
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
+import DisplayError from './ErrorMessage';
+import { CURRENT_USER_QUERY } from './User';
 
 const RESET_MUTATION = gql`
   mutation RESET_MUTATION(
@@ -24,8 +24,8 @@ const RESET_MUTATION = gql`
 `;
 
 function Reset(props) {
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   return (
     //CURRENT_USER_QUERY will be refetched once the mutation is finished
@@ -41,8 +41,8 @@ function Reset(props) {
             onSubmit={async event => {
               event.preventDefault();
               await reset();
-              setPassword("");
-              setConfirmPassword("");
+              setPassword('');
+              setConfirmPassword('');
             }}
           >
             <fieldset disabled={loading} aria-busy={loading}>

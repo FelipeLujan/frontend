@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Form from "./styles/Form";
-import { Mutation } from "react-apollo";
-import gql from "graphql-tag";
-import DisplayError from "./ErrorMessage";
-import { CURRENT_USER_QUERY } from "./User";
+import React, { useState } from 'react';
+import Form from './styles/Form';
+import { Mutation } from 'react-apollo';
+import gql from 'graphql-tag';
+import DisplayError from './ErrorMessage';
+import { CURRENT_USER_QUERY } from './User';
 
 const SIGNUP_MUTATION = gql`
   mutation SIGNUP_MUTATION(
@@ -20,9 +20,9 @@ const SIGNUP_MUTATION = gql`
 `;
 
 function Signup() {
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   console.log(name);
   return (
     <Mutation

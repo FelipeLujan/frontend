@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import Signup from "../components/Signup";
-import Signin from "../components/SignIn";
-import RequestReset from "../components/RequestReset";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Signup from '../components/Signup';
+import Signin from '../components/SignIn';
+import RequestReset from '../components/RequestReset';
 
 const Columns = styled.div`
   display: grid;
