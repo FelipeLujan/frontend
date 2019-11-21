@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import formatMoney from '../lib/formatMoney';
 import RemoveFromCart from './RemoveFromCart';
+import { adopt } from 'react-adopt';
+import { TOGGLE_CART_MUTATION } from './Cart';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -20,6 +22,13 @@ const CartItemStyles = styled.li`
 `;
 
 const CartItem = ({ cartItem }) => {
+  if (!cartItem.item)
+    return (
+      <CartItemStyles>
+        <p>This item has been removed</p>
+        <RemoveFromCart id={cartItem.id}> </RemoveFromCart>
+      </CartItemStyles>
+    );
   return (
     <CartItemStyles>
       <img width="100" alt={cartItem.item.title} src={cartItem.item.image} />

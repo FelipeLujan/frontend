@@ -28,12 +28,15 @@ const RemoveFromCart = props => {
     //  this update is called right after the response comes back from the server after the mutation
     //  is executed
     //  cache is apollo cache and payload is the response
-    console.log('update called');
-    //  1. read the cache
-    //    2. remove item from cart
-    //    3. write cache back
+
+    //    1. read the cache
     const data = cache.readQuery({ query: CURRENT_USER_QUERY });
+    console.log(data);
+
+    //    2. remove item from cart
     const cartItemId = payload.data.removeFromCart.id;
+
+    //    3. write cache back
     data.me.cart = data.me.cart.filter(cartItem => cartItem.id !== cartItemId);
 
     cache.writeQuery({ query: CURRENT_USER_QUERY, data });
