@@ -1,8 +1,8 @@
-import App, { Container } from 'next/app';
-import Page from '../components/Page';
-import React from 'react';
-import { ApolloProvider } from 'react-apollo';
-import withData from '../lib/withData';
+import App, { Container } from "next/app";
+import Page from "../components/Page";
+import React from "react";
+import { ApolloProvider } from "react-apollo";
+import withData from "../lib/withData";
 class MyApp extends App {
   //  getInitialProps es un método especial de NEXT, lo que retorna para al render() por props
   static async getInitialProps({ Component, ctx }) {

@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import Downshift from 'downshift';
-import { Router } from 'next/router';
-import gql from 'graphql-tag';
-import debounce from 'lodash.debounce';
-import { ApolloConsumer } from 'react-apollo';
-import { SearchStyles, DropDown, DropDownItem } from './styles/DropDown';
-import styled from 'styled-components';
-import { get } from 'enzyme/src/configuration';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import Downshift from "downshift";
+import { Router } from "next/router";
+import gql from "graphql-tag";
+import debounce from "lodash.debounce";
+import { ApolloConsumer } from "react-apollo";
+import { SearchStyles, DropDown, DropDownItem } from "./styles/DropDown";
+import styled from "styled-components";
 
 const Img = styled.img``;
 
@@ -53,7 +52,7 @@ export const AutoComplete = props => {
   };
   const routeToItem = item => {
     Router.push({
-      pathname: '/item',
+      pathname: "/item",
       query: { id: item.id }
     });
   };
@@ -82,10 +81,10 @@ export const AutoComplete = props => {
                           event.persist();
                           onInput(event, client);
                         },
-                        placeholder: 'search for an item',
-                        type: 'Search',
-                        className: loading ? 'loading' : '',
-                        id: 'search'
+                        placeholder: "search for an item",
+                        type: "Search",
+                        className: loading ? "loading" : "",
+                        id: "search"
                       })}
                     />
                   );
@@ -99,7 +98,7 @@ export const AutoComplete = props => {
                       key={item.id}
                       highlighted={index === highlightedIndex}
                     >
-                      <img width={50} alt={item.img} src={item.img} />{' '}
+                      <img width={50} alt={item.img} src={item.img} />{" "}
                       {item.title}
                     </DropDownItem>
                   ))}

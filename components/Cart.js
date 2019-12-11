@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Mutation, Query } from 'react-apollo';
-import gql from 'graphql-tag';
+import React from "react";
+import PropTypes from "prop-types";
+import { Mutation, Query } from "react-apollo";
+import gql from "graphql-tag";
 
-import CartStyles from './styles/CartStyles';
-import Supreme from './styles/Supreme';
-import CloseButton from './styles/CloseButton';
-import SickButton from './styles/SickButton';
-import User from './User';
-import CartItem from './CartItem';
-import calcTotalPrice from '../lib/calcTotalPrice';
-import formatMoney from '../lib/formatMoney';
-import { adopt } from 'react-adopt';
+import CartStyles from "./styles/CartStyles";
+import Supreme from "./styles/Supreme";
+import CloseButton from "./styles/CloseButton";
+import SickButton from "./styles/SickButton";
+import User from "./User";
+import CartItem from "./CartItem";
+import calcTotalPrice from "../lib/calcTotalPrice";
+import formatMoney from "../lib/formatMoney";
+import { adopt } from "react-adopt";
 
 export const LOCAL_STATE_QUERY = gql`
   query {

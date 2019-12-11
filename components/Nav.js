@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import NavStyles from './styles/NavStyles';
-import User from './User';
-import Signout from './Signout';
-import { TOGGLE_CART_MUTATION } from './Cart';
-import { Mutation } from 'react-apollo';
-import CartCount from './CartCount';
+import Link from "next/link";
+import NavStyles from "./styles/NavStyles";
+import User from "./User";
+import Signout from "./Signout";
+import { TOGGLE_CART_MUTATION } from "./Cart";
+import { Mutation } from "react-apollo";
+import CartCount from "./CartCount";
 
 const Nav = () => (
   <User>
@@ -36,7 +36,7 @@ const Nav = () => (
                           return tally + cartItem.quantity;
                         }, 0)}
                       >
-                        {' '}
+                        {" "}
                       </CartCount>
                     </button>
                   );
@@ -49,7 +49,7 @@ const Nav = () => (
               <>
                 <Link href="/signup">
                   <a>Sign in</a>
-                </Link>{' '}
+                </Link>{" "}
               </>
             ))}
         </NavStyles>

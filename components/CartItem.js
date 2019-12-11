@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import formatMoney from '../lib/formatMoney';
-import RemoveFromCart from './RemoveFromCart';
-import { adopt } from 'react-adopt';
-import { TOGGLE_CART_MUTATION } from './Cart';
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import formatMoney from "../lib/formatMoney";
+import RemoveFromCart from "./RemoveFromCart";
+import { adopt } from "react-adopt";
+import { TOGGLE_CART_MUTATION } from "./Cart";
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -35,7 +35,7 @@ const CartItem = ({ cartItem }) => {
       <div className="cart-item-details">
         <h3>{cartItem.item.title}</h3>
         <p>
-          {formatMoney(cartItem.item.price * cartItem.quantity)} -{' '}
+          {formatMoney(cartItem.item.price * cartItem.quantity)} -{" "}
           <em>
             {cartItem.quantity} &times; {formatMoney(cartItem.item.price)}
           </em>

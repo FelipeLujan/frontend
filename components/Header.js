@@ -1,11 +1,11 @@
-import Nav from './Nav';
-import Link from 'next/link';
-import styled from 'styled-components';
-import Router from 'next/router';
-import NProgress from 'nprogress';
-import Cart from './Cart';
-import Search, { AutoComplete } from './Search';
-import { SearchStyles } from './styles/DropDown';
+import Nav from "./Nav";
+import Link from "next/link";
+import styled from "styled-components";
+import Router from "next/router";
+import NProgress from "nprogress";
+import Cart from "./Cart";
+import Search, { AutoComplete } from "./Search";
+import { SearchStyles } from "./styles/DropDown";
 
 Router.onRouteChangeStart = () => {
   NProgress.start();
