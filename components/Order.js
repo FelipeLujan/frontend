@@ -71,6 +71,7 @@ const Order = props => {
                     <p>Qty: {item.quantity}</p>
                     <p>Each: {formatMoney(item.price)}</p>
                     <p>Subtotal: {formatMoney(item.price * item.quantity)}</p>
+                    <p>{item.description}</p>
                   </div>
                 </div>
               ))}
