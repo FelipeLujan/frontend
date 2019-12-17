@@ -39,10 +39,11 @@ const Cart = props => {
   return (
     <Composed>
       {({ user, toggleCart, localState }) => {
-        let me = user.data.me;
-        if (!me) {
+        if (!user || !user.data || !user.data.me) {
           return null;
         }
+        console.log("meeeeeeeeeeee", user.data.me);
+        let me = user.data.me;
 
         return (
           <CartStyles open={localState.data.cartOpen}>

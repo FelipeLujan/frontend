@@ -7,6 +7,7 @@
     "dev": "next -p 7777",
     "build": "next build",
     "start": "next start -p $PORT",
+    "local": "next start",
     "test": "NODE_ENV=test jest --watch",
     "heroku-postbuild": "next build"
   },
